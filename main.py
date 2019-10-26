@@ -67,7 +67,51 @@ def print_progress_bar(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
                   curses.color_pair(5))
 
 
-def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
+def print_input_line(stdscr, cursor: Cursor) -> str:
+    '''
+    paint the input line for the user
+    '''
+    cursor.set_x(-cursor.get_x())
+    cursor.set_y(-cursor.get_y())
+
+    # ask for knight's starting position
+    stdscr.addstr(cursor.get_y(), cursor.get_x(),
+                  'knight\'s position (row, col):')
+    cursor.set_x(29)
+
+    # wait for user's input
+    stdscr.addstr(cursor.get_y(), cursor.get_x(), ' ')
+    input: str = ''
+
+    curses.echo()
+    i = stdscr.getch()
+    while i != 10:
+        i = stdscr.getch()
+
+        if i == 10:
+            break
+        else:
+            input += chr(i)
+
+            if len(input) > 4:
+                stdscr.addstr(
+                    cursor.get_y(), cursor.get_x(),
+                    'Invalid, Try Again.' + ' ' * 10)
+                input = ''
+                sleep(0.5)
+                stdscr.addstr(cursor.get_y(), cursor.get_x(),
+                              ' ' * (cursor.max_x))
+                cursor.set_x(-cursor.get_x())
+    curses.noecho()
+
+    return input
+
+
+def print_board(stdscr,
+                cursor: Cursor,
+                board: List[List[int]],
+                progress: bool = False,
+                sleep_value: float = 0.5) -> None:
     '''
     paint the board on the window
     '''
@@ -108,11 +152,12 @@ def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     cursor.reset_x()
     horizontal_line(stdscr, cursor)
 
-    # print the progress bar
-    print_progress_bar(stdscr, cursor, board)
+    if progress:
+        # print the progress bar
+        print_progress_bar(stdscr, cursor, board)
 
     stdscr.refresh()
-    sleep(0.5)
+    sleep(sleep_value)
 
 
 def main(stdscr) -> None:
@@ -141,7 +186,10 @@ def main(stdscr) -> None:
     cursor: Cursor = Cursor(max_x, max_y)
 
     # print the chess board
-    print_board(stdscr, cursor, board)
+    print_board(stdscr, cursor, board, sleep_value=0.0)
+
+    # print input line
+    print_input_line(stdscr, cursor)
 
     for row in range(8):
         for col in range(8):
