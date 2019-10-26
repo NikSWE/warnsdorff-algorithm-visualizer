@@ -60,6 +60,7 @@ def print_progress_bar(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     '''
     cursor.set_x(-cursor.get_x())
     cursor.set_y(-cursor.get_y() + 1)
+    stdscr.addstr(cursor.get_y(), cursor.get_x(), ' ' * cursor.max_x)
     stdscr.addstr(cursor.get_y(), cursor.get_x(), get_progress(board))
 
 
