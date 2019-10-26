@@ -4,25 +4,7 @@ from typing import List
 from utils.cursor import Cursor
 
 
-def main(stdscr) -> None:
-    # clear the window
-    stdscr.clear()
-
-    # hide the cursor
-    curses.curs_set(0)
-
-    # colors
-    curses.init_pair(1, curses.COLOR_YELLOW, curses.COLOR_BLACK)  # boundry
-
-    # get max x and y co-ordinates of the window
-    max_y, max_x = stdscr.getmaxyx()
-
-    # 8 x 8 chess board
-    board: List[List[int]] = [[0] * 8] * 8
-
-    # initialize the cursor
-    cursor: Cursor = Cursor(max_x, max_y)
-
+def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     # horizontal boundry line
     cursor.set_x(1)
     stdscr.addstr(cursor.get_y(), cursor.get_x(), '-' * 29,
@@ -30,7 +12,7 @@ def main(stdscr) -> None:
     cursor.set_y(1)
 
     for row in range(8):
-        cursor.reset_x(max_x)
+        cursor.reset_x()
 
         # print empty line
         if 0 < row <= 7:
@@ -55,7 +37,7 @@ def main(stdscr) -> None:
                       curses.color_pair(1))
         cursor.set_y(1)
 
-    cursor.reset_x(max_x)
+    cursor.reset_x()
 
     # horizontal boundry line
     cursor.set_x(1)
@@ -64,6 +46,29 @@ def main(stdscr) -> None:
     cursor.set_y(1)
 
     stdscr.refresh()
+
+
+def main(stdscr) -> None:
+    # clear the window
+    stdscr.clear()
+
+    # hide the cursor
+    curses.curs_set(0)
+
+    # colors
+    curses.init_pair(1, curses.COLOR_YELLOW, curses.COLOR_BLACK)  # boundry
+
+    # get max x and y co-ordinates of the window
+    max_y, max_x = stdscr.getmaxyx()
+
+    # 8 x 8 chess board
+    board: List[List[int]] = [[0] * 8] * 8
+
+    # initialize the cursor
+    cursor: Cursor = Cursor(max_x, max_y)
+
+    print_board(stdscr, cursor, board)
+
     sleep(30)
 
 
