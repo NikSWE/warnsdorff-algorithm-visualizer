@@ -54,6 +54,15 @@ def update_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     print_board(stdscr, cursor, board)
 
 
+def print_progress_bar(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
+    '''
+    paint the progress bar on the window
+    '''
+    cursor.set_x(-cursor.get_x())
+    cursor.set_y(-cursor.get_y() + 1)
+    stdscr.addstr(cursor.get_y(), cursor.get_x(), get_progress(board))
+
+
 def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     '''
     paint the board on the window
@@ -95,9 +104,8 @@ def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     cursor.reset_x()
     horizontal_line(stdscr, cursor)
 
-    cursor.set_x(-cursor.get_x())
-    cursor.set_y(-cursor.get_y() + 1)
-    stdscr.addstr(cursor.get_y(), cursor.get_x(), get_progress(board))
+    # print the progress bar
+    print_progress_bar(stdscr, cursor, board)
 
     stdscr.refresh()
     sleep(0.5)
