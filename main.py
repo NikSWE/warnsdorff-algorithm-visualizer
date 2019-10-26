@@ -42,7 +42,7 @@ def get_progress(board) -> str:
 
     progress = (visited_cell_count / total_cell_count) * 100
 
-    return f'{progress}% completed'
+    return f'{progress}%'
 
 
 def update_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
@@ -60,8 +60,11 @@ def print_progress_bar(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     '''
     cursor.set_x(-cursor.get_x())
     cursor.set_y(-cursor.get_y() + 1)
-    stdscr.addstr(cursor.get_y(), cursor.get_x(), ' ' * cursor.max_x)
-    stdscr.addstr(cursor.get_y(), cursor.get_x(), get_progress(board))
+    stdscr.addstr(cursor.get_y(), cursor.get_x(), 'completed: ')
+    stdscr.addstr(cursor.get_y(), cursor.get_x() + 11, ' ' * cursor.max_x)
+    stdscr.addstr(cursor.get_y(),
+                  cursor.get_x() + 11, get_progress(board),
+                  curses.color_pair(5))
 
 
 def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
@@ -125,6 +128,8 @@ def main(stdscr) -> None:
     curses.init_pair(3, curses.COLOR_RED, curses.COLOR_BLACK)  # knight's cell
     curses.init_pair(4, curses.COLOR_WHITE,
                      curses.COLOR_BLACK)  # unvisited cell
+    curses.init_pair(5, curses.COLOR_MAGENTA,
+                     curses.COLOR_BLACK)  # progress bar
 
     # get max x and y co-ordinates of the window
     max_y, max_x = stdscr.getmaxyx()
