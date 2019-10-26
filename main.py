@@ -30,6 +30,21 @@ def vertical_line(stdscr, cursor: Cursor, side: str) -> None:
         raise ValueError('invalid value for argument \'side\'')
 
 
+def get_progress(board) -> str:
+    '''
+    returns the progress of the algorithm
+    '''
+    visited_cell_count = 0
+    total_cell_count = 64
+
+    for row in range(8):
+        visited_cell_count += board[row].count(1)
+
+    progress = (visited_cell_count / total_cell_count) * 100
+
+    return f'{progress}% completed'
+
+
 def update_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     '''
     paint the updated board on the window
@@ -79,6 +94,11 @@ def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
 
     cursor.reset_x()
     horizontal_line(stdscr, cursor)
+
+    cursor.set_x(-cursor.get_x())
+    cursor.set_y(-cursor.get_y() + 1)
+    stdscr.addstr(cursor.get_y(), cursor.get_x(), get_progress(board))
+
     stdscr.refresh()
     sleep(0.5)
 
