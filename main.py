@@ -4,19 +4,46 @@ from typing import List
 from utils.cursor import Cursor
 
 
+def horizontal_line(stdscr, cursor: Cursor) -> None:
+    '''
+    horizontal boundry line
+    '''
+    cursor.set_x(1)
+    stdscr.addstr(cursor.get_y(), cursor.get_x(), '-' * 29,
+                  curses.color_pair(1))
+    cursor.set_y(1)
+
+
+def vertical_line(stdscr, cursor: Cursor, side: str) -> None:
+    '''
+    vertical boundry line
+    '''
+    if side == 'L':
+        stdscr.addstr(cursor.get_y(), cursor.get_x(), '|',
+                      curses.color_pair(1))
+        cursor.set_x(1)
+    elif side == 'R':
+        stdscr.addstr(cursor.get_y(), cursor.get_x(), '|',
+                      curses.color_pair(1))
+        cursor.set_y(1)
+    else:
+        raise ValueError('invalid value for argument \'side\'')
+
+
 def update_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
+    '''
+    paint the updated board on the window
+    '''
     cursor.reset_x()
     cursor.reset_y()
     print_board(stdscr, cursor, board)
 
 
 def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
-    # horizontal boundry line
-    cursor.set_x(1)
-    stdscr.addstr(cursor.get_y(), cursor.get_x(), '-' * 29,
-                  curses.color_pair(1))
-    cursor.set_y(1)
-
+    '''
+    paint the board on the window
+    '''
+    horizontal_line(stdscr, cursor)
     for row in range(8):
         cursor.reset_x()
 
@@ -27,9 +54,7 @@ def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
             cursor.set_y(1)
 
         # print left border
-        stdscr.addstr(cursor.get_y(), cursor.get_x(), '|',
-                      curses.color_pair(1))
-        cursor.set_x(1)
+        vertical_line(stdscr, cursor, side='L')
 
         for col in range(8):
             # cell is visited
@@ -50,19 +75,12 @@ def print_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
                 cursor.set_x(3)
 
         # print right border
-        stdscr.addstr(cursor.get_y(), cursor.get_x(), '|',
-                      curses.color_pair(1))
-        cursor.set_y(1)
+        vertical_line(stdscr, cursor, side='R')
 
     cursor.reset_x()
-
-    # horizontal boundry line
-    cursor.set_x(1)
-    stdscr.addstr(cursor.get_y(), cursor.get_x(), '-' * 29,
-                  curses.color_pair(1))
-    cursor.set_y(1)
-
+    horizontal_line(stdscr, cursor)
     stdscr.refresh()
+    sleep(0.5)
 
 
 def main(stdscr) -> None:
@@ -88,14 +106,13 @@ def main(stdscr) -> None:
     # initialize the cursor
     cursor: Cursor = Cursor(max_x, max_y)
 
+    # print the chess board
     print_board(stdscr, cursor, board)
-    sleep(1)
 
     for row in range(8):
         for col in range(8):
             board[row][col] = 1
             update_board(stdscr, cursor, board)
-            sleep(1)
 
 
 curses.wrapper(main)
