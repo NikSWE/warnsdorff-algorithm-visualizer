@@ -1,10 +1,13 @@
 import curses
 from typing import List
+from colorama import init, Fore
+from time import sleep
 from utils.cursor import Cursor
+from utils.input import print_dummy_board, clear, validate
 from utils.board import print_board, print_input_line, update_board, place_knight
 
 
-def main(stdscr) -> None:
+def visualize(stdscr) -> None:
     # clear the window
     stdscr.clear()
 
@@ -50,4 +53,28 @@ def main(stdscr) -> None:
             update_board(stdscr, cursor, board)
 
 
-curses.wrapper(main)
+def main() -> None:
+    # initialize colorama
+    init(autoreset=True)
+
+
+    while True:
+        # clears the console
+        clear()
+
+        # print dummy chess board to help user decide knight's position
+        print_dummy_board()
+        
+        pos = input('knight\'s position (row, col): ')
+        
+        # check user's input
+        if validate(pos):
+            break
+        else:
+            print(Fore.RED + 'Invalid, Try Again.')
+            sleep(1)
+
+# curses.wrapper(visualize)
+
+if __name__ == '__main__':
+    main()
