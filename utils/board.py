@@ -30,36 +30,6 @@ def vertical_line(stdscr, cursor: Cursor, side: str) -> None:
         raise ValueError('invalid value for argument \'side\'')
 
 
-def print_input_line(stdscr, cursor: Cursor) -> str:
-    '''
-    paint the input line for the user
-    '''
-    cursor.set_x(-cursor.get_x())
-    cursor.set_y(-cursor.get_y())
-
-    # ask for knight's starting position
-    stdscr.addstr(cursor.get_y(), cursor.get_x(),
-                  'knight\'s position (row, col):')
-    cursor.set_x(29)
-
-    # wait for user's input
-    stdscr.addstr(cursor.get_y(), cursor.get_x(), ' ')
-    input: str = ''
-
-    curses.echo()
-    while True:
-        i = stdscr.getkey()
-
-        # enter key pressed
-        if ord(i) == 10:
-            break
-
-        input += i
-    curses.noecho()
-
-    return input
-
-
 def get_progress(board) -> str:
     '''
     returns the progress of the algorithm
@@ -75,21 +45,13 @@ def get_progress(board) -> str:
     return f'{progress}%'
 
 
-def place_knight(input: str, board: List[List[int]]) -> None:
-    '''
-    places the knight on the chess board
-    '''
-    row, col = list(map(int, input.split(',')))
-    board[row][col] = 2
-
-
 def update_board(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     '''
     paint the updated board on the window
     '''
     cursor.reset_x()
     cursor.reset_y()
-    print_board(stdscr, cursor, board, progress=True, sleep_value=0.5)
+    print_board(stdscr, cursor, board, progress=True)
 
 
 def print_progress_bar(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
@@ -97,7 +59,7 @@ def print_progress_bar(stdscr, cursor: Cursor, board: List[List[int]]) -> None:
     paint the progress bar on the window
     '''
     cursor.set_x(-cursor.get_x())
-    cursor.set_y(-cursor.get_y() + 1)
+    cursor.set_y(-cursor.get_y())
     stdscr.addstr(cursor.get_y(), cursor.get_x(), 'completed: ')
     stdscr.addstr(cursor.get_y(), cursor.get_x() + 11, ' ' * cursor.max_x)
     stdscr.addstr(cursor.get_y(),
