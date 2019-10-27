@@ -27,7 +27,7 @@ We can solve the **knight's tour** problem using warnsdorff's algorithm, which s
 
 ## Sample Run
 
-`Fig.1` demonstrates a sample run of the visualizer when knight is placed at `0, 0`, you can find other samples [here]().
+`Fig.1` demonstrates a sample run of the visualizer when knight is placed at `0, 0`, you can find other samples [here](https://github.com/muj-programmer/warnsdorff-algorithm-visualizer/blob/master/SAMPLES.md).
 
 | Symbol   | Meaning           |
 |:--------:|-------------------|
