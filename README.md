@@ -24,11 +24,11 @@ We can solve the **knight's tour** problem using warnsdorff's algorithm, which s
 
 `Fig.1` demonstrates a sample run of the visualizer when knight is placed at `0, 0`, you can find other samples [here]().
 
-| Symbol                       | Meaning           |
-|:----------------------------:|-------------------|
-| <font color="black">0</font> | Unvisited Cell    | 
-| <font color="green">1</font> | Visited Cell      |
-| <font color="red">2</font>   | Knight's Position | 
+| Symbol   | Meaning           |
+|:--------:|-------------------|
+| 0        | Unvisited Cell    | 
+| 1        | Visited Cell      |
+| 2        | Knight's Position | 
 
 ## Fun Fact
 
