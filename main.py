@@ -8,8 +8,43 @@ from utils.input import print_dummy_board, clear, validate
 from utils.board import print_board, update_board
 
 
-def algorithm() -> None:
-    pass
+def algorithm(stdscr, cursor: Cursor, board: List[List[int]], krow: int,
+              kcol: int) -> None:
+    '''
+    warnsdorff's algorithm implementation
+    '''
+    # directions the Knight can move on the chessboard
+    dx = [-2, -1, 1, 2, -2, -1, 1, 2]
+    dy = [1, 2, 2, 1, -1, -2, -2, -1]
+
+    for k in range(64):
+        board[krow][kcol] = 1
+        pq: List = []  # priority queue of avialable neighbors
+
+        for i in range(8):
+            nrow: int = krow + dx[i]
+            ncol: int = kcol + dy[i]
+
+            if 0 <= nrow <= 7 and 0 <= ncol <= 7 and board[nrow][ncol] == 0:
+                # count the available neighbors of the neighbor
+                count = 0
+                for j in range(8):
+                    nnrow: int = nrow + dx[j]
+                    nncol: int = ncol + dy[j]
+
+                    if 0 <= nnrow <= 7 and 0 <= nncol <= 7 and board[nnrow][
+                            nncol] == 0:
+                        count += 1
+                heappush(pq, (count, i))
+
+        if len(pq) > 0:
+            (p, m) = heappop(pq)
+            krow += dx[i]
+            kcol += dy[i]
+            board[krow][kcol] = 2
+            update_board(stdscr, cursor, board)
+        else:
+            break
 
 
 def visualize(stdscr, pos: Tuple[int, int]) -> None:
@@ -43,11 +78,8 @@ def visualize(stdscr, pos: Tuple[int, int]) -> None:
     # print the chess board
     print_board(stdscr, cursor, board, sleep_value=2.0, initialize=True)
 
-    for row in range(8):
-        for col in range(8):
-            if board[row][col] != 2:
-                board[row][col] = 1
-            update_board(stdscr, cursor, board)
+    # start the warnsdorff algorithm
+    algorithm(stdscr, cursor, board, pos[0], pos[1])
 
 
 def main() -> None:
