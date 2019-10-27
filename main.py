@@ -14,13 +14,14 @@ def algorithm(stdscr, cursor: Cursor, board: List[List[int]], krow: int,
     warnsdorff's algorithm implementation
     '''
     # directions the Knight can move on the chessboard
-    dx = [-2, -1, 1, 2, -2, -1, 1, 2]
-    dy = [1, 2, 2, 1, -1, -2, -2, -1]
+    dx: List[int] = [1, 2, 2, 1, -1, -2, -2, -1]
+    dy: List[int] = [-2, -1, 1, 2, 2, 1, -1, -2]
 
-    for k in range(64):
+    for _ in range(64):
         board[krow][kcol] = 1
-        pq: List = []  # priority queue of avialable neighbors
+        pq: List[Tuple[int, int]] = []  # priority queue of avialable neighbors
 
+        # degree of neighbors
         for i in range(8):
             nrow: int = krow + dx[i]
             ncol: int = kcol + dy[i]
@@ -38,13 +39,14 @@ def algorithm(stdscr, cursor: Cursor, board: List[List[int]], krow: int,
                 heappush(pq, (count, i))
 
         if len(pq) > 0:
-            (p, m) = heappop(pq)
-            krow += dx[i]
-            kcol += dy[i]
+            (p, m) = heappop(pq) # knight's next position
+            krow += dx[m]
+            kcol += dy[m]
             board[krow][kcol] = 2
             update_board(stdscr, cursor, board)
         else:
-            break
+            board[krow][kcol] = 1
+            update_board(stdscr, cursor, board)            
 
 
 def visualize(stdscr, pos: Tuple[int, int]) -> None:
@@ -80,6 +82,8 @@ def visualize(stdscr, pos: Tuple[int, int]) -> None:
 
     # start the warnsdorff algorithm
     algorithm(stdscr, cursor, board, pos[0], pos[1])
+
+    sleep(5.0)
 
 
 def main() -> None:
