@@ -2,9 +2,14 @@ import curses
 from typing import List, Tuple
 from colorama import init, Fore
 from time import sleep
+from heapq import heappush, heappop
 from utils.cursor import Cursor
 from utils.input import print_dummy_board, clear, validate
 from utils.board import print_board, update_board
+
+
+def algorithm() -> None:
+    pass
 
 
 def visualize(stdscr, pos: Tuple[int, int]) -> None:
@@ -36,7 +41,7 @@ def visualize(stdscr, pos: Tuple[int, int]) -> None:
     board[pos[0]][pos[1]] = 2
 
     # print the chess board
-    print_board(stdscr, cursor, board, sleep_value=1.0)
+    print_board(stdscr, cursor, board, sleep_value=2.0, initialize=True)
 
     for row in range(8):
         for col in range(8):
