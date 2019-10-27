@@ -39,8 +39,8 @@ def validate(pos: str) -> bool:
     '''
     try:
         row, col = list(map(int, pos.split(',')))
-        
-        if not 0<=row<=7 or not 0<=col<=7:
+
+        if not 0 <= row <= 7 or not 0 <= col <= 7:
             raise ValueError()
     except:
         return False
