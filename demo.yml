@@ -1,0 +1,301 @@
+# The configurations that used for the recording, feel free to edit them
+config:
+
+  # Specify a command to be executed
+  # like `/bin/bash -l`, `ls`, or any other commands
+  # the default is bash for Linux
+  # or powershell.exe for Windows
+  command: zsh
+  
+  # Specify the current working directory path
+  # the default is the current working directory path
+  cwd: /Users/muj-programmer/warnsdorff-algorithm-visualizer
+  
+  # Export additional ENV variables
+  env:
+    recording: true
+  
+  # Explicitly set the number of columns
+  # or use `auto` to take the current
+  # number of columns of your shell
+  cols: 96
+  
+  # Explicitly set the number of rows
+  # or use `auto` to take the current
+  # number of rows of your shell
+  rows: 31
+  
+  # Amount of times to repeat GIF
+  # If value is -1, play once
+  # If value is 0, loop indefinitely
+  # If value is a positive number, loop n times
+  repeat: 0
+  
+  # Quality
+  # 1 - 100
+  quality: 100
+  
+  # Delay between frames in ms
+  # If the value is `auto` use the actual recording delays
+  frameDelay: auto
+  
+  # Maximum delay between frames in ms
+  # Ignored if the `frameDelay` isn't set to `auto`
+  # Set to `auto` to prevent limiting the max idle time
+  maxIdleTime: 2000
+  
+  # The surrounding frame box
+  # The `type` can be null, window, floating, or solid`
+  # To hide the title use the value null
+  # Don't forget to add a backgroundColor style with a null as type
+  frameBox:
+    type: floating
+    title: visualizer
+    style:
+      border: 0px black solid
+      # boxShadow: none
+      # margin: 0px
+  
+  # Add a watermark image to the rendered gif
+  # You need to specify an absolute path for
+  # the image on your machine or a URL, and you can also
+  # add your own CSS styles
+  watermark:
+    imagePath: null
+    style:
+      position: absolute
+      right: 15px
+      bottom: 15px
+      width: 100px
+      opacity: 0.9
+  
+  # Cursor style can be one of
+  # `block`, `underline`, or `bar`
+  cursorStyle: bar
+  
+  # Font family
+  # You can use any font that is installed on your machine
+  # in CSS-like syntax
+  fontFamily: "Hack Nerd Font, Lucida Console, Ubuntu Mono, Monospace"
+  
+  # The size of the font
+  fontSize: 12
+  
+  # The height of lines
+  lineHeight: 1
+  
+  # The spacing between letters
+  letterSpacing: 0
+  
+  # Theme
+  theme:
+    background: "transparent"
+    foreground: "#afafaf"
+    cursor: "#c7c7c7"
+    black: "#232628"
+    red: "#fc4384"
+    green: "#b3e33b"
+    yellow: "#ffa727"
+    blue: "#75dff2"
+    magenta: "#ae89fe"
+    cyan: "#708387"
+    white: "#d5d5d0"
+    brightBlack: "#626566"
+    brightRed: "#ff7fac"
+    brightGreen: "#c8ed71"
+    brightYellow: "#ebdf86"
+    brightBlue: "#75dff2"
+    brightMagenta: "#ae89fe"
+    brightCyan: "#b1c6ca"
+    brightWhite: "#f9f9f4"
+  
+# Records, feel free to edit them
+records:
+  - delay: 783
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                               \r \r"
+  - delay: 150
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[39m\e[0m\e[49m\e[44m\e[30m ~/warnsdorff-algorithm-visualizer \e[42m\e[34m\e[30m  master \e[49m\e[32m\e[39m \e[K\e[?1h\e=\e[?2004h"
+  - delay: 918
+    content: "\e[1m\e[31mp\e[0m\e[39m\e[90mython3 main.py\e[39m\e[14D"
+  - delay: 280
+    content: "\b\e[1m\e[31mp\e[1m\e[31my\e[0m\e[39m"
+  - delay: 94
+    content: "\b\b\e[1m\e[31mp\e[1m\e[31my\e[1m\e[31mt\e[0m\e[39m"
+  - delay: 118
+    content: "\b\e[1m\e[31mt\e[1m\e[31mh\e[0m\e[39m"
+  - delay: 81
+    content: "\b\e[1m\e[31mh\e[1m\e[31mo\e[0m\e[39m"
+  - delay: 158
+    content: "\b\b\b\b\b\e[0m\e[32mp\e[0m\e[32my\e[0m\e[32mt\e[0m\e[32mh\e[0m\e[32mo\e[32mn\e[39m"
+  - delay: 594
+    content: "\b\e[32mn\e[32m3\e[39m"
+  - delay: 103
+    content: "\e[39m "
+  - delay: 228
+    content: "\e[39m\e[4mm\e[24m"
+  - delay: 124
+    content: "\b\e[4mm\e[39m\e[4ma\e[24m"
+  - delay: 127
+    content: "\b\e[4ma\e[39m\e[4mi\e[24m"
+  - delay: 64
+    content: "\b\e[4mi\e[39m\e[4mn\e[24m"
+  - delay: 471
+    content: "\b\e[4mn\e[39m\e[4m.\e[24m"
+  - delay: 279
+    content: "\b\e[4m.\e[39m\e[4mp\e[24m"
+  - delay: 235
+    content: "\b\e[4mp\e[39m\e[4my\e[24m"
+  - delay: 1140
+    content: "\e[?1l\e>"
+  - delay: 6
+    content: "\e[?2004l\r\r\n"
+  - delay: 64
+    content: "\e[H\e[2J      0   1   2   3   4   5   6   7\r\n\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m0   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m1   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m2   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m3   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m4   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m5   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m6   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m7   \e[33m|   |   |   |   |   |   |   |   |\e[0m\r\n\e[0m    \e[33m---------------------------------\e[0m\r\n\e[0m\r\n\e[0m\r\n\e[0mknight's position (row, col): "
+  - delay: 1808
+    content: '0'
+  - delay: 622
+    content: ','
+  - delay: 432
+    content: ' '
+  - delay: 797
+    content: '0'
+  - delay: 1111
+    content: "\r\n\e[?1049h\e[1;31r\e(B\e[m\e[4l\e[?7h\e[?1h\e=\e[39;49m\e[?25l\e[39;49m\e[37m\e[40m\e[H\e[2J\e[32m\e[40minitializing......\e[8;35H\e[33m\e[40m-----------------------------\e[9;34H|\e[31m\e[40m2\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[10;34H|\e[29X\e[10;64H|\e[11;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[12;34H|\e[29X\e[12;64H|\e[13;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[14;34H|\e[29X\e[14;64H|\e[15;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[16;34H|\e[29X\e[16;64H|\e[17;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[18;34H|\e[29X\e[18;64H|\e[19;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[20;34H|\e[29X\e[20;64H|\e[21;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[22;34H|\e[29X\e[22;64H|\e[23;34H|\e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e(B\e[m\e[39;49m\e[37m\e[40m   \e[37m\e[40m0\e[33m\e[40m|\e[24;35H-----------------------------\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 2005
+    content: "\rcompleted: \e[35m\e[40m1.5625%\e[9;35H\e[32m\e[40m1\e[13;39H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[12G\e[35m\e[40m3.125%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[13;39H\e[32m\e[40m1\e[17;35H\e[31m\e[40m2\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[12G\e[35m\e[40m4.6875%\e[17;35H\e[32m\e[40m1\e[21;39H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[12G\e[35m\e[40m6.25%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[21;39H\e[32m\e[40m1\e[23;47H\e[31m\e[40m2\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[12G\e[35m\e[40m7.8125%\e[21;55H\e[31m\e[40m2\e[23;47H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[12G\e[35m\e[40m9.375%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[21;55H\e[32m\e[40m1\e[23;63H\e[31m\e[40m2\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[12G\e[35m\e[40m10.9375%\e[19;59H\e[31m\e[40m2\e[23;63H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m2.5%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[19;59H\e[32m\e[40m1\e[23;55H\e[31m\e[40m2\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 505
+    content: "\b\b\b\b\e[35m\e[40m4.0625%\e[21;63H\e[31m\e[40m2\e[23;55H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m5.625%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[17;59H\e[31m\e[40m2\e[21;63H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m7.1875%\e[13;63H\e[31m\e[40m2\e[17;59H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m8.75%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;59H\e[31m\e[40m2\e[13;63H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[12G\e[35m\e[40m20.3125%\e[9;59H\e[32m\e[40m1\e[11;51H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m1.875%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;43H\e[31m\e[40m2\e[11;51H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m3.4375%\e[9;43H\e[32m\e[40m1\e[11;35H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m5.0%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[11;35H\e[32m\e[40m1\e[15;39H\e[31m\e[40m2\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\b\b\b\b\e[35m\e[40m6.5625%\e[15;39H\e[32m\e[40m1\e[19;35H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m8.125%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[19;35H\e[32m\e[40m1\e[23;39H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m9.6875%\e[21;47H\e[31m\e[40m2\e[23;39H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\e[1;12H\e[35m\e[40m31.25%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[17;43H\e[31m\e[40m2\e[21;47H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m2.8125%\e[15;35H\e[31m\e[40m2\e[17;43H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m4.375%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[11;39H\e[31m\e[40m2\e[15;35H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m5.9375%\e[9;47H\e[31m\e[40m2\e[11;39H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m7.5%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;47H\e[32m\e[40m1\e[13;43H\e[31m\e[40m2\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\b\b\b\b\e[35m\e[40m9.0625%\e[9;39H\e[31m\e[40m2\e[13;43H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\e[1;12H\e[35m\e[40m40.625%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;39H\e[32m\e[40m1\e[13;35H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m2.1875%\e[11;43H\e[31m\e[40m2\e[13;35H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 505
+    content: "\e[13G\e[35m\e[40m3.75%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;51H\e[31m\e[40m2\e[11;43H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 501
+    content: "\e[13G\e[35m\e[40m5.3125%\e[9;51H\e[32m\e[40m1\e[13;47H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 501
+    content: "\e[13G\e[35m\e[40m6.875%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[11;55H\e[31m\e[40m2\e[13;47H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m8.4375%\e[9;63H\e[31m\e[40m2\e[11;55H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[1;12H\e[35m\e[40m50.0%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;63H\e[32m\e[40m1\e[13;59H\e[31m\e[40m2\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\b\b\b\b\e[35m\e[40m1.5625%\e[13;59H\e[32m\e[40m1\e[15;51H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m3.125%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[11;47H\e[31m\e[40m2\e[15;51H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\e[13G\e[35m\e[40m4.6875%\e[9;55H\e[31m\e[40m2\e[11;47H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\e[13G\e[35m\e[40m6.25%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[9;55H\e[32m\e[40m1\e[11;63H\e[31m\e[40m2\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m7.8125%\e[11;63H\e[32m\e[40m1\e[13;55H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m9.375%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[13;55H\e[32m\e[40m1\e[15;63H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\e[12G\e[35m\e[40m60.9375%\e[11;59H\e[31m\e[40m2\e[15;63H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m2.5%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[11;59H\e[32m\e[40m1\e[15;55H\e[31m\e[40m2\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\b\b\b\b\e[35m\e[40m4.0625%\e[15;55H\e[32m\e[40m1\e[17;63H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m5.625%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[17;63H\e[32m\e[40m1\e[21;59H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m7.1875%\e[19;51H\e[31m\e[40m2\e[21;59H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m8.75%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[15;47H\e[31m\e[40m2\e[19;51H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[12G\e[35m\e[40m70.3125%\e[15;47H\e[32m\e[40m1\e[17;39H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m1.875%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[17;39H\e[32m\e[40m1\e[21;35H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\e[13G\e[35m\e[40m3.4375%\e[19;43H\e[31m\e[40m2\e[21;35H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m5.0%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[17;51H\e[31m\e[40m2\e[19;43H\e[32m\e[40m1\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 502
+    content: "\b\b\b\b\e[35m\e[40m6.5625%\e[15;59H\e[31m\e[40m2\e[17;51H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m8.125%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[15;59H\e[32m\e[40m1\e[19;63H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 505
+    content: "\e[13G\e[35m\e[40m9.6875%\e[19;63H\e[32m\e[40m1\e[23;59H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[1;12H\e[35m\e[40m81.25%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[19;55H\e[31m\e[40m2\e[23;59H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m2.8125%\e[19;55H\e[32m\e[40m1\e[23;51H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m4.375%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[21;43H\e[31m\e[40m2\e[23;51H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m5.9375%\e[21;43H\e[32m\e[40m1\e[23;35H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m7.5%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[19;39H\e[31m\e[40m2\e[23;35H\e[32m\e[40m1\e[1;17H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\b\b\b\b\e[35m\e[40m9.0625%\e[19;39H\e[32m\e[40m1\e[23;43H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[1;12H\e[35m\e[40m90.625%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[21;51H\e[31m\e[40m2\e[23;43H\e[32m\e[40m1\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 503
+    content: "\e[13G\e[35m\e[40m2.1875%\e[17;47H\e[31m\e[40m2\e[21;51H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m3.75%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[13;51H\e[31m\e[40m2\e[17;47H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 504
+    content: "\e[13G\e[35m\e[40m5.3125%\e[13;51H\e[32m\e[40m1\e[15;43H\e[31m\e[40m2\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m6.875%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[15;43H\e[32m\e[40m1\e[19;47H\e[31m\e[40m2\e[1;19H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[13G\e[35m\e[40m8.4375%\e[17;55H\e[31m\e[40m2\e[19;47H\e[32m\e[40m1\e[1;20H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 506
+    content: "\e[1;12H\e[35m\e[40m100.0%\e(B\e[m\e[39;49m\e[37m\e[40m\e[K\e[17;55H\e[32m\e[40m1\e[1;18H\e(B\e[m\e[39;49m\e[37m\e[40m"
+  - delay: 5505
+    content: "\e[?1l\e>\e[39;49m\r\e[31d\e[K\e[31;1H\e[?12l\e[?25h\e[?1049l\r\e[?1l\e>"
+  - delay: 8
+    content: "\e[H\e[2J\e[0m"
+  - delay: 8
+    content: "\e[1m\e[7m%\e[27m\e[1m\e[0m                                                                                               \r \r"
+  - delay: 143
+    content: "\r\e[0m\e[27m\e[24m\e[J\e[39m\e[0m\e[49m\e[44m\e[30m ~/warnsdorff-algorithm-visualizer \e[42m\e[34m\e[30m  master \e[49m\e[32m\e[39m \e[K\e[?1h\e=\e[?2004h"
+  - delay: 1880
+    content: "\e[?2004l\r\r\n"
