@@ -1,6 +1,6 @@
 # Warnsdorff's Algorithm
 
-<figure align=center>
+<figure align="center">
     <img src="./.github/visualizer.gif" alt="visualizer" width="100%"/>
-    <figcaption>Algorithm Visualization</figcaption>
+    <figcaption align="center">Algorithm Visualization</figcaption>
 </figure>
