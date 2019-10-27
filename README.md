@@ -13,7 +13,12 @@ $ pip install -r requirements.txt
 
 ## Intro
 
-A **knight's tour** is a sequence of moves of a knight on a chessboard such that the knight visits every square only once. If the knight ends on a square that is one knight's move from the beginning square (so that it could tour the board again immediately, following the same path), the tour is closed, otherwise it is open.
+A **knight's tour** (See `Fig.2`) is a sequence of moves of a knight on a chessboard such that the knight visits every square only once. If the knight ends on a square that is one knight's move from the beginning square (so that it could tour the board again immediately, following the same path), the tour is closed, otherwise it is open.
+
+<div align="center">
+    <img src="./.github/knight-tour.gif" alt="sample knight's tour" width="50%"/>
+    <p align="center"><strong>Fig.2 Sample Knight's Tour</strong></p>
+</div>
 
 We can solve the **knight's tour** problem using warnsdorff's algorithm, which states that:- 
 
