@@ -1,5 +1,5 @@
 import curses
-from typing import List
+from typing import List, Tuple
 from colorama import init, Fore
 from time import sleep
 from utils.cursor import Cursor
@@ -7,7 +7,7 @@ from utils.input import print_dummy_board, clear, validate
 from utils.board import print_board, print_input_line, update_board, place_knight
 
 
-def visualize(stdscr) -> None:
+def visualize(stdscr, pos: Tuple[int]) -> None:
     # clear the window
     stdscr.clear()
 
@@ -73,8 +73,9 @@ def main() -> None:
             print(Fore.RED + 'Invalid, Try Again.')
             sleep(1)
 
+        # start visualization
+        curses.wrapper(visualize, tuple(map(int, pos.split(','))))
 
-# curses.wrapper(visualize)
 
 if __name__ == '__main__':
     main()
