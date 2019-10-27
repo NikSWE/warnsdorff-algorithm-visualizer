@@ -1,3 +1,5 @@
+import os
+import sys
 import curses
 from typing import List, Tuple
 from colorama import init, Fore
@@ -112,4 +114,11 @@ def main() -> None:
 
 
 if __name__ == '__main__':
+    # Get the size 
+    # of the terminal 
+    size = os.get_terminal_size() 
+    
+    if size[0] < 55 or size[1] < 25:
+        sys.exit('Maximize your terminal window. (Req: column=55, lines=25)')
+    
     main()
