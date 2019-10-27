@@ -57,22 +57,22 @@ def main() -> None:
     # initialize colorama
     init(autoreset=True)
 
-
     while True:
         # clears the console
         clear()
 
         # print dummy chess board to help user decide knight's position
         print_dummy_board()
-        
+
         pos = input('knight\'s position (row, col): ')
-        
+
         # check user's input
         if validate(pos):
             break
         else:
             print(Fore.RED + 'Invalid, Try Again.')
             sleep(1)
+
 
 # curses.wrapper(visualize)
 
