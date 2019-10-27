@@ -71,7 +71,8 @@ def print_board(stdscr,
                 cursor: Cursor,
                 board: List[List[int]],
                 progress: bool = False,
-                sleep_value: float = 0.5) -> None:
+                sleep_value: float = 0.5,
+                initialize: bool = False) -> None:
     '''
     paint the board on the window
     '''
@@ -115,6 +116,11 @@ def print_board(stdscr,
     if progress:
         # print the progress bar
         print_progress_bar(stdscr, cursor, board)
+    
+    if initialize:
+        cursor.set_x(-cursor.get_x())
+        cursor.set_y(-cursor.get_y())
+        stdscr.addstr(cursor.get_y(), cursor.get_x(), 'initializing......', curses.color_pair(2))
 
     stdscr.refresh()
     sleep(sleep_value)
