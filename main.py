@@ -4,10 +4,10 @@ from colorama import init, Fore
 from time import sleep
 from utils.cursor import Cursor
 from utils.input import print_dummy_board, clear, validate
-from utils.board import print_board, print_input_line, update_board, place_knight
+from utils.board import print_board, update_board
 
 
-def visualize(stdscr, pos: Tuple[int]) -> None:
+def visualize(stdscr, pos: Tuple[int, int]) -> None:
     # clear the window
     stdscr.clear()
 
@@ -32,19 +32,11 @@ def visualize(stdscr, pos: Tuple[int]) -> None:
     # initialize the cursor
     cursor: Cursor = Cursor(max_x, max_y)
 
-    # print the chess board
-    print_board(stdscr, cursor, board, sleep_value=0.0)
-
-    # print input line
-    input: str = print_input_line(stdscr, cursor)
-
     # place the knight on the board
-    place_knight(input, board)
+    board[pos[0]][pos[1]] = 2
 
-    cursor.reset_x()
-    cursor.reset_y()
-
-    print_board(stdscr, cursor, board, sleep_value=1.0, progress=True)
+    # print the chess board
+    print_board(stdscr, cursor, board, sleep_value=1.0)
 
     for row in range(8):
         for col in range(8):
@@ -58,7 +50,6 @@ def main() -> None:
     init(autoreset=True)
 
     while True:
-        # clears the console
         clear()
 
         # print dummy chess board to help user decide knight's position
@@ -73,8 +64,10 @@ def main() -> None:
             print(Fore.RED + 'Invalid, Try Again.')
             sleep(1)
 
-        # start visualization
-        curses.wrapper(visualize, tuple(map(int, pos.split(','))))
+    # start visualization
+    curses.wrapper(visualize, tuple(map(int, pos.split(','))))
+
+    clear()
 
 
 if __name__ == '__main__':
